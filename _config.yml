@@ -13,4 +13,4 @@ description: > # your text below (remove <br> elements if you don't need line br
 
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-cayman
+theme: jekyll-theme-time-machine
