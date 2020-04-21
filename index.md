@@ -12,6 +12,7 @@
 As a research assistant for the USDA Forest Service I am updating Baltimore’s comprehensive map of the hundreds of civic groups partcipiating in environmental stewardship in Baltimore as part of the 2019 Baltimore STEWMAP Project. 
 <br><br>
 <img src="images/Screenshot (92).png?raw=true"/>
+
 ---
 ## Personal Projects
 ---
@@ -20,6 +21,7 @@ As a research assistant for the USDA Forest Service I am updating Baltimore’s 
 I love to travel and take pictures of wildlife and landscapes. This map has some of my favorite photos that I've taken. Click the link above to see a more detailed map of my photos!
 <br><br>
 <img src="images/PhotoMap.png?raw=true"/>
+
 ---
 ## Other Academic Works
 ---
