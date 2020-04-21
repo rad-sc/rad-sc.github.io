@@ -2,13 +2,13 @@
 ---
 ## Advanced GIS Coursework 
 ---
-# [A Spatial Analysis of Florida with Sea Level Rise](/project1_486/index.md)
-# [Project 2]
-# [Comparing Geotagged #COVID19 Tweets to Geotagged #ToiletPaper tweets](/Lab6/index.md)
+### [A Spatial Analysis of Florida with Sea Level Rise](/project1_486/index.md)
+### [Project 2]
+### [Comparing Geotagged #COVID19 Tweets to Geotagged #ToiletPaper tweets](/Lab6/index.md)
 ---
 ## USDA Forest Service Research
 ---
-## [Baltimore Stewardship Mapping Project](https://www.nrs.fs.fed.us/stew-map/baltimore/)
+### [Baltimore Stewardship Mapping Project](https://www.nrs.fs.fed.us/stew-map/baltimore/)
 As a research assistant for the USDA Forest Service I am updating Baltimore’s comprehensive map of the hundreds of civic groups partcipiating in environmental stewardship in Baltimore as part of the 2019 Baltimore STEWMAP Project. 
 <br><br>
 <img src="images/Screenshot (92).png?raw=true"/>
