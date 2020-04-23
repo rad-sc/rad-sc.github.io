@@ -1,5 +1,7 @@
 # [Lab 4]
+<br><br>
 # [Lab 5]
+<br><br>
 # Comparing Geotagged #COVID19 Tweets to Geotagged #ToiletPaper Tweets [Lab 6]
 
 ### The COVID19 Pandemic
