@@ -3,7 +3,7 @@
 ## Advanced GIS Coursework 
 ---
 ### [A Spatial Analysis of Florida Sea Level Rise](/project1_486/index.md)
-### [Project 2]
+### [Project 2](/project2_486/index.md)
 ### [Labs](/labs/index.md) 
 ---
 ## USDA Forest Service Research
