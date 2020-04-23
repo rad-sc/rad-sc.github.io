@@ -6,7 +6,7 @@
 ## Advanced GIS Coursework 
 ---
 ### [★ A Spatial Analysis of Florida Sea Level Rise ★](/project1_486/index.md)
-<img src="https://rad-sc.github.io/project1_486/images/FloridaLand.png?raw=true"/>
+<img src="https://rad-sc.github.io/project1_486/images/SeaLevelRise.gif?raw=true"/>
 
 ### [★ Deep Diving Spatial Autocorrelation to Identify Nutrient Pollution Hotspots in the Chesapeake Bay Watershed ★](/project2_486/index.md)
 <img src="https://rad-sc.github.io/project2_486/WaterQualityStations.jpg?raw=true"/>
