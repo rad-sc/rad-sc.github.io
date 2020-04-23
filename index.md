@@ -26,7 +26,7 @@ I love to travel and take pictures of wildlife and landscapes. Below are a few o
 ## Other Academic Works
 ---
 ### Algal Biofuels Research
-I am working on a student research project in the UMBC Biology Department. The project invloves using molecular biology techniques to genetically modify existing algal organisms to improve their capability to produce biofuels.
+As a student researcher for the UMBC Biology Department I am working on an individual research project in Dr. Stephen Miller's algal biofuels lab. My project focuses on using molecular biology techniques and recombiant DNA technology to genetically modify existing algal organisms and improve their capability to produce biofuels. This project is still in progress, up to date information and methods can be read on my project poster, which can be accessed by clicking the title link above.
 <br><br>
 <img src="images/algae culture.jpg?raw=true"/>
 
