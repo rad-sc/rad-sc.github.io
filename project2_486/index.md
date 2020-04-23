@@ -17,6 +17,7 @@ Spatial autocorrelation is property of spatial data used to describe the measure
 
 ## Identifying Hotspots and Looking Closer
 <img src="../project2_486/NutrientHotspots.jpg?raw=true"/>
+<img src="../project2_486/MontourPowerPlantHotspot.jpg?raw=true"/>
 
 ## Conclusions
 
