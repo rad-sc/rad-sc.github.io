@@ -1,4 +1,5 @@
 # Deep Diving Spatial Autocorrelation to Identify Nutrient Pollution Hotspots in the Chesapeake Bay Watershed
+---
 
 ## Introduction to Spatial Autocorrelation
 
@@ -7,13 +8,19 @@ Spatial autocorrelation is property of spatial data used to describe the measure
 ### Moran's I
 ### Getis-Ord Gi*
 
+---
+
 ## Background and the Input Data
 <img src="../project2_486/WaterQualityStations.jpg?raw=true"/>
 
 ### Nutrient Pollution and the Chesapeake Bay
 ### Water Quality Data
 
+---
+
 ## Data Analysis
+
+---
 
 ## Identifying Hotspots and Looking Closer
 <img src="../project2_486/NutrientHotspots.jpg?raw=true"/>
@@ -21,6 +28,8 @@ Spatial autocorrelation is property of spatial data used to describe the measure
 <img src="../project2_486/MontourPowerPlantHotspot.jpg?raw=true"/>
 <img src="../project2_486/MonocasyRiverHotspot.jpg?raw=true"/>
 <img src="../project2_486/BackRiverHotspot.jpg?raw=true"/>
+
+---
 
 ## Conclusions
 
