@@ -5,7 +5,6 @@
 ### [A Spatial Analysis of Florida Sea Level Rise](/project1_486/index.md)
 ### [Project 2]
 ### [Labs](/labs/index.md) 
-### [Comparing Geotagged #COVID19 Tweets to Geotagged #ToiletPaper tweets](/Lab6/index.md)
 ---
 ## USDA Forest Service Research
 ---
