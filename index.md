@@ -7,6 +7,7 @@
 ---
 ### [A Spatial Analysis of Florida Sea Level Rise](/project1_486/index.md)
 ### [Deep Diving Spatial Autocorrelation to Identify Nutrient Pollution Hotspots in the Chesapeake Bay Watershed](/project2_486/index.md)
+<img src="../project2_486/WaterQualityStations.jpg?raw=true"/>
 ### [Labs](/labs/index.md) 
 ---
 ## USDA Forest Service Research
