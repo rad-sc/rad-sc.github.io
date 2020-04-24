@@ -37,7 +37,7 @@ After hotspots were calculated I created a pointlayer of all the data with recor
 
 ## Identifying Hotspots and Looking Closer
 Hotspots that coincided with values above regulatory norms were visualized as hotspots of interest in the map below. The Hotspot Analysis tool sorts hotspots into bins based on statistical confidence.
-<br>br>
+<br><br>
 <img src="../project2_486/NutrientHotspots.jpg?raw=true"/>
 I focused on 3 locations for my analysis, where hotspots were in close proximity to a coldspot (>5mi) within the same HUC8 watershed. There were more than 3 of these in total, but that is an analysis for another day. 
 <br><br>
