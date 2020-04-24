@@ -39,22 +39,30 @@ After hotspots were calculated I created a pointlayer of all the data with recor
 Hotspots that coincided with values above regulatory norms were visualized as hotspots of interest in the map below. The Hotspot Analysis tool sorts hotspots into bins based on statistical confidence.
 <br><br>
 <img src="../project2_486/NutrientHotspots.jpg?raw=true"/>
+
+---
+
 I focused on 3 locations for my analysis, where hotspots were in close proximity to a coldspot (>5mi) within the same HUC8 watershed. There were more than 3 of these in total, but that is an analysis for another day. 
 <br><br>
 <img src="../project2_486/HotspotCloserLook.jpg?raw=true"/>
-<br><br>
+
+---
+
 The first of my qualitative observations was in Central Pennsylvania near Lewisburg, along the western branch of the Susquehanna River. I found something interesting after looking upstream of a hotspot (N and P). Coal power plants are significant sources of nutrient pollution with leftover coal ash and worse.
 <br><br>
 <img src="../project2_486/MontourPowerPlantHotspot.jpg?raw=true"/>
-<br><br>
+
+---
+
 My second observation was 2 golf courses upstream of a phosphorus hotspot in north central Maryland. Golf courses fertilize their land with nitrogen and phosphorus, often execessively. 
 <br><br>
 <img src="../project2_486/MonocasyRiverHotspot.jpg?raw=true"/>
-<br><br>
+
+---
+
 My final observation came to no personal surprise as a Baltimore native. Looking at another phosphorus hotspot just East of Baltimore City at the Back River water quality station instantly led me to look for what I knew was upstream, the Back River Wastewater Treatment Plant. Wastewater treament effluent is highly concentrated in nutrients.
 <br><br>
 <img src="../project2_486/BackRiverHotspot.jpg?raw=true"/>
-<br><br>
 
 ---
 
