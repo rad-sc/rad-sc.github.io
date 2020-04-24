@@ -20,7 +20,9 @@ The Getis-Ord Gi* statistic measures spatial autocorrellation based on feature l
 <img src="../project2_486/WaterQualityStations.jpg?raw=true"/>
 
 ### Nutrient Pollution and the Chesapeake Bay
+Nutrient pollution is a significant problem globally across watersheds, where nitrogen and phosphorus runoff are often the focus of analysis, research, debate, and management efforts, due to their potential for significant watershed disturbance as limiting plant nutrients. Some other high profile nutrient water quality measures are dissolved carbon (another limiting nutrient), suspended sediments (for implications of turbidity and carrying dissolved materials), and dissolved oxygen (as an important measure of ecosystem health). Nitrogen and phosphorus exist in many forms in the environment (nitrate, ammonia, phosphate, phosphorus salts), and therefore there are are many tests for both. 
 ### Water Quality Data
+The Chesapeake Bay Program's Water Quality Database is an open source platform for selecting and downloading measured and calculated physical and nutrient parameters in the geographic extent of the Chesapeake Bay and tidal tributaries for their data collection from 1984-present. The data can is downloaded with geographic attributes, the smallest being 'Water Quality Station', and with other options like Hydrologic Unit and County/City. 
 
 ---
 
