@@ -1,7 +1,5 @@
 ### ***About Me:***
-My name is Sarah Carpe and I'm from Baltimore Maryland. I am a graduating undergrad student at the University of Maryland, Baltimore County studying Environmental Science and Geography (B.S.). I'm particulary interested in in aquatic ecosystems and want to persue a graduate degree related to Marine Science in the near future. This portfolio contains some of my academic achievements, employment projects, and personal works. Navigate my porfolio by clicking title headings to be directed to a project page. If you're interested in my work or want to contact me I can be reached at scarpe1997@gmail.com 
-<img src="https://rad-sc.github.io/images/PicsArt_03-20-11.46.38.png?raw=true"/>
-
+My name is Sarah Carpe and I'm from Baltimore Maryland. I am a graduating undergrad student at the University of Maryland, Baltimore County studying Environmental Science and Geography (B.S.). I'm particulary interested in in aquatic ecosystems and want to persue a graduate degree related to Marine Science in the near future. This portfolio contains some of my academic achievements, employment projects, and personal works. Navigate my porfolio by clicking title headings to be directed to a project page.
 
 # My GIS Portfolio
 ---
