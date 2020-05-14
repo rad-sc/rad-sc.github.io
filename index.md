@@ -15,7 +15,7 @@ My name is Sarah Carpe and I'm from Baltimore Maryland. I'm particulary interest
 
 ### [★ Nutrient Hotspots Continued ★](FinalProject_486/qgis2web_finalproject/index.md)
 
-### [Lab Outputs](/labs/index.md) 
+### [★ Lab Outputs ★](/labs/index.md) 
 ---
 ## USDA Forest Service Research
 ---
