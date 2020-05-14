@@ -9,3 +9,4 @@ My previous analysis utilized the Getis-Ord Gi* statistic to measure spatial aut
 ---
 
 ### [R Studio data manipulation](https://rad-sc.github.io/FinalProject_486/TNTP.nb.html)
+click this link to see the simple R code I used. All functions were already included in base R program.
