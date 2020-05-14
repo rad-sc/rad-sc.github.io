@@ -13,7 +13,7 @@ My name is Sarah Carpe and I'm from Baltimore Maryland. I'm particulary interest
 ### [★ Deep Diving Spatial Autocorrelation to Identify Nutrient Pollution Hotspots in the Chesapeake Bay Watershed ★](/project2_486/index.md)
 <img src="https://rad-sc.github.io/project2_486/WaterQualityStations.jpg?raw=true"/>
 
-### [★ Nutrient Hotspots Continued, Webmaps and Quantitative Data! ★](FinalProject_486/index.md)
+### [★ Nutrient Hotspots Continued, Webmaps with Quantitative Data! ★](FinalProject_486/index.md)
 
 ### [★ Lab Outputs ★](/labs/index.md) 
 ---
