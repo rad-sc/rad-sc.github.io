@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+		#abstract {
+			min-height:20px;
+			height:auto !important;
+			height:20px;
+			width:auto !important;
+			width:200px !important;
+			min-width: 200px;
+		}
+        </style>
+        <title>Chesapeake Bay Water Quality Stations (Average Phosphorus Readings)</title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Chesapeake_Bay_Watershed_CCA_2.js"></script>
+        <script src="data/ChesapeakeBayWatershedHUC8_3.js"></script>
+        <script src="data/TPBPC0035_4.js"></script>
+        <script src="data/TPMON0528_5.js"></script>
+        <script src="data/TPMON0546_6.js"></script>
+        <script src="data/TPWQN0401_7.js"></script>
+        <script src="data/TPWQN0462_8.js"></script>
+        <script src="data/TPWT31_9.js"></script>
+        <script src="data/TPWT41_10.js"></script>
+        <script src="data/TPMeasure1_11.js"></script>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/jquery.sparkline.min.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#68298c',
+                fillOpacity: 1
+              });
+            }
+			$("#sparkline").sparkline([0,37,59,88,166], {
+				type: 'box',
+				raw: true,
+				target: e.target.feature.properties['MeasureValueTPuL'],
+				boxLineColor: '#00007f',
+				boxFillColor: '#aaffef',
+				whiskerColor: '#003f7f',
+				outlierLineColor: '#7f007f',
+				outlierFillColor: '#bf00bf',
+				medianColor: '#7f007f',
+				targetColor: '#000000',
+				});
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[38.88360838042978,-79.77017556334357],[41.277375961368186,-73.6962951840104]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_ESRITerrain_0');
+        map.getPane('pane_ESRITerrain_0').style.zIndex = 400;
+        var layer_ESRITerrain_0 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRITerrain_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRITerrain_0;
+        map.addLayer(layer_ESRITerrain_0);
+        map.createPane('pane_ESRITopo_1');
+        map.getPane('pane_ESRITopo_1').style.zIndex = 401;
+        var layer_ESRITopo_1 = L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRITopo_1',
+            opacity: 0.5,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRITopo_1;
+        map.addLayer(layer_ESRITopo_1);
+        function pop_Chesapeake_Bay_Watershed_CCA_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ccareg'] !== null ? autolinker.link(feature.properties['ccareg'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ccaname'] !== null ? autolinker.link(feature.properties['ccaname'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Chesapeake_Bay_Watershed_CCA_2_0() {
+            return {
+                pane: 'pane_Chesapeake_Bay_Watershed_CCA_2',
+                interactive: false,
+            }
+        }
+        function style_Chesapeake_Bay_Watershed_CCA_2_1() {
+            return {
+                pane: 'pane_Chesapeake_Bay_Watershed_CCA_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Chesapeake_Bay_Watershed_CCA_2');
+        map.getPane('pane_Chesapeake_Bay_Watershed_CCA_2').style.zIndex = 402;
+        map.getPane('pane_Chesapeake_Bay_Watershed_CCA_2').style['mix-blend-mode'] = 'normal';
+        var layer_Chesapeake_Bay_Watershed_CCA_2 = new L.geoJson.multiStyle(json_Chesapeake_Bay_Watershed_CCA_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Chesapeake_Bay_Watershed_CCA_2',
+            layerName: 'layer_Chesapeake_Bay_Watershed_CCA_2',
+            pane: 'pane_Chesapeake_Bay_Watershed_CCA_2',
+            onEachFeature: pop_Chesapeake_Bay_Watershed_CCA_2,
+            styles: [style_Chesapeake_Bay_Watershed_CCA_2_0,style_Chesapeake_Bay_Watershed_CCA_2_1,]
+        });
+        bounds_group.addLayer(layer_Chesapeake_Bay_Watershed_CCA_2);
+        map.addLayer(layer_Chesapeake_Bay_Watershed_CCA_2);
+        function pop_ChesapeakeBayWatershedHUC8_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AREA'] !== null ? autolinker.link(feature.properties['AREA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PERIMETER'] !== null ? autolinker.link(feature.properties['PERIMETER'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DS573_WBDH'] !== null ? autolinker.link(feature.properties['DS573_WBDH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DS573_WB_1'] !== null ? autolinker.link(feature.properties['DS573_WB_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HUC_8'] !== null ? autolinker.link(feature.properties['HUC_8'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HUC8_N'] !== null ? autolinker.link(feature.properties['HUC8_N'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ChesapeakeBayWatershedHUC8_3_0() {
+            return {
+                pane: 'pane_ChesapeakeBayWatershedHUC8_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(196,60,57,0.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ChesapeakeBayWatershedHUC8_3');
+        map.getPane('pane_ChesapeakeBayWatershedHUC8_3').style.zIndex = 403;
+        map.getPane('pane_ChesapeakeBayWatershedHUC8_3').style['mix-blend-mode'] = 'normal';
+        var layer_ChesapeakeBayWatershedHUC8_3 = new L.geoJson(json_ChesapeakeBayWatershedHUC8_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ChesapeakeBayWatershedHUC8_3',
+            layerName: 'layer_ChesapeakeBayWatershedHUC8_3',
+            pane: 'pane_ChesapeakeBayWatershedHUC8_3',
+            onEachFeature: pop_ChesapeakeBayWatershedHUC8_3,
+            style: style_ChesapeakeBayWatershedHUC8_3_0,
+        });
+        bounds_group.addLayer(layer_ChesapeakeBayWatershedHUC8_3);
+        map.addLayer(layer_ChesapeakeBayWatershedHUC8_3);
+        function pop_TPBPC0035_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DateReformat'] !== null ? autolinker.link(feature.properties['DateReformat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Time'] !== null ? autolinker.link(feature.properties['Time'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BPC0035'] !== null ? autolinker.link(feature.properties['BPC0035'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BPC0035ul'] !== null ? autolinker.link(feature.properties['BPC0035ul'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPBPC0035_4_0() {
+            return {
+                pane: 'pane_TPBPC0035_4',
+                radius: 7.2,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(59,205,176,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TPBPC0035_4');
+        map.getPane('pane_TPBPC0035_4').style.zIndex = 404;
+        map.getPane('pane_TPBPC0035_4').style['mix-blend-mode'] = 'normal';
+        var layer_TPBPC0035_4 = new L.geoJson(json_TPBPC0035_4, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TPBPC0035_4',
+            layerName: 'layer_TPBPC0035_4',
+            pane: 'pane_TPBPC0035_4',
+            onEachFeature: pop_TPBPC0035_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPBPC0035_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPBPC0035_4);
+        map.addLayer(layer_TPBPC0035_4);
+        function pop_TPMON0528_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DateReformat'] !== null ? autolinker.link(feature.properties['DateReformat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Time'] !== null ? autolinker.link(feature.properties['Time'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MON0528'] !== null ? autolinker.link(feature.properties['MON0528'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MON0528ul'] !== null ? autolinker.link(feature.properties['MON0528ul'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPMON0528_5_0() {
+            return {
+                pane: 'pane_TPMON0528_5',
+                radius: 7.2,
+                opacity: 1,
+                color: 'rgba(179,92,21,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,197,30,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TPMON0528_5');
+        map.getPane('pane_TPMON0528_5').style.zIndex = 405;
+        map.getPane('pane_TPMON0528_5').style['mix-blend-mode'] = 'normal';
+        var layer_TPMON0528_5 = new L.geoJson(json_TPMON0528_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TPMON0528_5',
+            layerName: 'layer_TPMON0528_5',
+            pane: 'pane_TPMON0528_5',
+            onEachFeature: pop_TPMON0528_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPMON0528_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPMON0528_5);
+        map.addLayer(layer_TPMON0528_5);
+        function pop_TPMON0546_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DateReformat'] !== null ? autolinker.link(feature.properties['DateReformat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Time'] !== null ? autolinker.link(feature.properties['Time'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MON0546'] !== null ? autolinker.link(feature.properties['MON0546'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MON0546ul'] !== null ? autolinker.link(feature.properties['MON0546ul'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPMON0546_6_0() {
+            return {
+                pane: 'pane_TPMON0546_6',
+                radius: 7.2,
+                opacity: 1,
+                color: 'rgba(179,92,21,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,197,30,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TPMON0546_6');
+        map.getPane('pane_TPMON0546_6').style.zIndex = 406;
+        map.getPane('pane_TPMON0546_6').style['mix-blend-mode'] = 'normal';
+        var layer_TPMON0546_6 = new L.geoJson(json_TPMON0546_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TPMON0546_6',
+            layerName: 'layer_TPMON0546_6',
+            pane: 'pane_TPMON0546_6',
+            onEachFeature: pop_TPMON0546_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPMON0546_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPMON0546_6);
+        map.addLayer(layer_TPMON0546_6);
+        function pop_TPWQN0401_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DateReformat'] !== null ? autolinker.link(feature.properties['DateReformat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Time'] !== null ? autolinker.link(feature.properties['Time'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WQN0401'] !== null ? autolinker.link(feature.properties['WQN0401'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WQN0401ul'] !== null ? autolinker.link(feature.properties['WQN0401ul'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPWQN0401_7_0() {
+            return {
+                pane: 'pane_TPWQN0401_7',
+                radius: 7.2,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(59,205,176,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TPWQN0401_7');
+        map.getPane('pane_TPWQN0401_7').style.zIndex = 407;
+        map.getPane('pane_TPWQN0401_7').style['mix-blend-mode'] = 'normal';
+        var layer_TPWQN0401_7 = new L.geoJson(json_TPWQN0401_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TPWQN0401_7',
+            layerName: 'layer_TPWQN0401_7',
+            pane: 'pane_TPWQN0401_7',
+            onEachFeature: pop_TPWQN0401_7,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPWQN0401_7_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPWQN0401_7);
+        map.addLayer(layer_TPWQN0401_7);
+        function pop_TPWQN0462_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DateReformat'] !== null ? autolinker.link(feature.properties['DateReformat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Time'] !== null ? autolinker.link(feature.properties['Time'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WQN0462'] !== null ? autolinker.link(feature.properties['WQN0462'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WQN0462ul'] !== null ? autolinker.link(feature.properties['WQN0462ul'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPWQN0462_8_0() {
+            return {
+                pane: 'pane_TPWQN0462_8',
+                radius: 7.2,
+                opacity: 1,
+                color: 'rgba(179,92,21,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,197,30,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TPWQN0462_8');
+        map.getPane('pane_TPWQN0462_8').style.zIndex = 408;
+        map.getPane('pane_TPWQN0462_8').style['mix-blend-mode'] = 'normal';
+        var layer_TPWQN0462_8 = new L.geoJson(json_TPWQN0462_8, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TPWQN0462_8',
+            layerName: 'layer_TPWQN0462_8',
+            pane: 'pane_TPWQN0462_8',
+            onEachFeature: pop_TPWQN0462_8,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPWQN0462_8_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPWQN0462_8);
+        map.addLayer(layer_TPWQN0462_8);
+        function pop_TPWT31_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DateReformat'] !== null ? autolinker.link(feature.properties['DateReformat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Time'] !== null ? autolinker.link(feature.properties['Time'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WT3.1'] !== null ? autolinker.link(feature.properties['WT3.1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WT3.1ul'] !== null ? autolinker.link(feature.properties['WT3.1ul'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPWT31_9_0() {
+            return {
+                pane: 'pane_TPWT31_9',
+                radius: 7.2,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(59,205,176,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TPWT31_9');
+        map.getPane('pane_TPWT31_9').style.zIndex = 409;
+        map.getPane('pane_TPWT31_9').style['mix-blend-mode'] = 'normal';
+        var layer_TPWT31_9 = new L.geoJson(json_TPWT31_9, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TPWT31_9',
+            layerName: 'layer_TPWT31_9',
+            pane: 'pane_TPWT31_9',
+            onEachFeature: pop_TPWT31_9,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPWT31_9_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPWT31_9);
+        map.addLayer(layer_TPWT31_9);
+        function pop_TPWT41_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DateReformat'] !== null ? autolinker.link(feature.properties['DateReformat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Time'] !== null ? autolinker.link(feature.properties['Time'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WT4.1'] !== null ? autolinker.link(feature.properties['WT4.1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['WT4.1ul'] !== null ? autolinker.link(feature.properties['WT4.1ul'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPWT41_10_0() {
+            return {
+                pane: 'pane_TPWT41_10',
+                radius: 7.2,
+                opacity: 1,
+                color: 'rgba(179,92,21,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,197,30,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TPWT41_10');
+        map.getPane('pane_TPWT41_10').style.zIndex = 410;
+        map.getPane('pane_TPWT41_10').style['mix-blend-mode'] = 'normal';
+        var layer_TPWT41_10 = new L.geoJson(json_TPWT41_10, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TPWT41_10',
+            layerName: 'layer_TPWT41_10',
+            pane: 'pane_TPWT41_10',
+            onEachFeature: pop_TPWT41_10,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPWT41_10_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPWT41_10);
+        map.addLayer(layer_TPWT41_10);
+        function pop_TPMeasure1_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                        <td colspan="2"><strong>Station</strong><br />' + (feature.properties['Station'] !== null ? autolinker.link(feature.properties['Station'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Latitude</strong><br />' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Longitude</strong><br />' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    <tr>\
+                        <td colspan="2"><strong>Average Total Phosphorus in uL</strong><br />' + (feature.properties['MeasureValueTPuL'] !== null ? autolinker.link(feature.properties['MeasureValueTPuL'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TPMeasure1_11_0() {
+            return {
+                pane: 'pane_TPMeasure1_11',
+                radius: 3.2,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(211,255,240,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_TPMeasure1_11');
+        map.getPane('pane_TPMeasure1_11').style.zIndex = 411;
+        map.getPane('pane_TPMeasure1_11').style['mix-blend-mode'] = 'normal';
+        var layer_TPMeasure1_11 = new L.geoJson(json_TPMeasure1_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_TPMeasure1_11',
+            layerName: 'layer_TPMeasure1_11',
+            pane: 'pane_TPMeasure1_11',
+            onEachFeature: pop_TPMeasure1_11,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_TPMeasure1_11_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_TPMeasure1_11);
+        map.addLayer(layer_TPMeasure1_11);
+            var title = new L.Control();
+            title.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+            title.update = function () {
+                this._div.innerHTML = '<h3>Chesapeake Bay Water Quality Stations (Average Phosphorus Readings)\</h3></h4>Hover over a point to view station properties, average readings, and box plot statistics</h4>';
+            };
+            title.addTo(map);
+            var abstract = new L.Control({'position':'topright'});
+            abstract.onAdd = function (map) {
+                this._div = L.DomUtil.create('div',
+                'leaflet-control leaflet-bar abstract');
+                this._div.id = 'abstract'
+
+                    abstract.show();
+                    return this._div;
+                };
+                abstract.show = function () {
+                    this._div.classList.remove("abstract");
+                    this._div.classList.add("abstractUncollapsed");
+                    this._div.innerHTML = 'Average Phosphorus Readings: <span id="sparkline"> </span>';
+            };
+            abstract.addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
