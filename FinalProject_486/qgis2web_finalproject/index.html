@@ -68,7 +68,7 @@
             }
 			$("#sparkline").sparkline([0,37,59,88,336], {
 				type: 'box',
-				raw: true,
+				raw: false,
 				target: e.target.feature.properties['MeasureValueTPuL'],
 				boxLineColor: '#00007f',
 				boxFillColor: '#aaffef',
@@ -722,7 +722,7 @@
                     <tr>\
                         <td colspan="2"><strong>Longitude</strong><br />' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
                     <tr>\
-                        <td colspan="2"><strong>Average Total Phosphorus in uL</strong><br />' + (feature.properties['MeasureValueTPuL'] !== null ? autolinker.link(feature.properties['MeasureValueTPuL'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Average Total Phosphorus in ug/L</strong><br />' + (feature.properties['MeasureValueTPuL'] !== null ? autolinker.link(feature.properties['MeasureValueTPuL'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
