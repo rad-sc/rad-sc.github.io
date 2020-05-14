@@ -8,4 +8,4 @@ My previous analysis utilized the Getis-Ord Gi* statistic to measure spatial aut
 ## [Chesapeake Bay Total Nitrogen Webmap](https://rad-sc.github.io/FinalProject_486/qgis2web_finalproject2/index.html) 
 ---
 
-### [R Studio data manipulation]
+### [R Studio data manipulation](https://rad-sc.github.io/FinalProject_486/TNTP.nb.html)
