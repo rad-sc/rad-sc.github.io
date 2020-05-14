@@ -5,7 +5,7 @@ My previous analysis utilized the Getis-Ord Gi* statistic to measure spatial aut
 
 ## [Chesapeake Bay Total Phosphorus Webmap](https://rad-sc.github.io/FinalProject_486/qgis2web_finalproject/index.html)
 <br><br>
-## [Chesapeake Bay Total Nitrogen Webmap] 
+## [Chesapeake Bay Total Nitrogen Webmap](https://rad-sc.github.io/FinalProject_486/qgis2web_finalproject2/index.html) 
 ---
 
 ### [R Studio data manipulation]
