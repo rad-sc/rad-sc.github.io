@@ -1,5 +1,5 @@
 ### ***About Me:***
-My name is Sarah Carpe and I'm from Baltimore Maryland. I'm particulary interested in in aquatic ecosystems and want to persue a graduate degree related to Marine Science in the near future. This portfolio contains some of my academic achievements, employment projects, and personal works. Navigate my porfolio by clicking title headings to be directed to a project page. This Portfolio is a current work in progress, and is being updated often so check back for more!
+My name is Sarah I'm a recent graduate from University of Maryland, Baltimore County. I'm particulary interested in in aquatic ecosystems and want to persue a graduate degree related to Marine Science in the near future. This portfolio contains some of my academic achievements, employment projects, and personal works. Navigate my porfolio by clicking title headings to be directed to a project page. This portfolio is a current work in progress, and is being updated often so check back for more!
 
 ---
 
