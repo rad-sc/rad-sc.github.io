@@ -1,8 +1,5 @@
-# [Lab 4]
-<br><br>
-# [Lab 5]
-<br><br>
-# Comparing Geotagged #COVID19 Tweets to Geotagged #ToiletPaper Tweets [Lab 6]
+
+# Comparing Geotagged #COVID19 Tweets to Geotagged #ToiletPaper Tweets 
 
 ### The COVID19 Pandemic
 The Coronavirus disease outbreak has become a global pandemic and is upending everyday life in major nations like Italy, China, and now it is taking over the United States; The U.S. has just overtaken Italy and China for number of confirmed cases of COVID-19. Much speculation exists around how a countries response to an infectious agent can inhibit spread, and extreme social distancing measures have been put in place across the United States. It is the reality that basic needs (healthcare, housing, food, basic care items) are not provided for many in the United States, and very few protections have been put in place in these unprecedented times. Shortages of items ranging from protective equipment like masks and gloves to basic necessities like water, food, and toilet paper, are occuring all over the U.S.; in particular toilet paper shortages are getting a lot of attention because panic buyers are taking more than their fare share causing some to go without. My task was to compare the share of geocoded #Covid19 tweets to #ToiletPaper tweets to see who is talking about what where.
