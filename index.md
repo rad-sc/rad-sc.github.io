@@ -31,7 +31,7 @@ More information about Baltimore's stewardship mapping project and old stewardsh
 # [National Aquarium Internship]
 #### [★ Species Monitoring Final Presentation ★]
 
-<a href="pdfs/UCEEI_presentation.pdf" class="image fit"><img src="images/20200129_004923-COLLAGE.jpg" alt=""></a>
+<a href="pdfs/UCEEI_presentation.pdf" class="image fit"><img src="images/UCEEI_Interns.jpg" alt=""></a>
   
 ---
 
