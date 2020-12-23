@@ -3,25 +3,25 @@
 
 ---
 
-#             **My GIS Portfolio**
+# **My GIS Portfolio**
 #### Navigate my porfolio by clicking title headings to be directed to a project page. 
 ---
-#             Advanced GIS Coursework 
----
+# Advanced GIS Coursework 
+
+1.
 #### [★ A Spatial Analysis of Florida Sea Level Rise ★](/project1_486/index.md)
 <img src="https://rad-sc.github.io/project1_486/images/SeaLevelRise.gif?raw=true"/>
-
+2.
 #### [★ Deep Diving Spatial Autocorrelation to Identify Nutrient Pollution Hotspots in the Chesapeake Bay Watershed ★](/project2_486/index.md)
 <img src="https://rad-sc.github.io/project2_486/WaterQualityStations.jpg?raw=true"/>
-
+3.
 #### [★ Nutrient Hotspots Continued, Webmaps with Quantitative Data! ★](FinalProject_486/index.md)
-
+4.
 #### [★ Lab Outputs ★](/labs/index.md) 
 
- 
 ---
 # USDA Forest Service Research
----
+
 #### [Baltimore Stewardship Mapping Project](project_STEWMAP/index.md)
 ##### [STEWMAP Forest Service webpage](https://www.nrs.fs.fed.us/stew-map/baltimore/)
 As a research assistant for the USDA Forest Service I am updating Baltimore’s comprehensive map of the hundreds of civic groups partcipiating in environmental stewardship in Baltimore as part of the 2019 Baltimore STEWMAP Project. Below is an image of my most recent updates, however the map is still in progress at this time. Some highlighted ideas for future analyses can be found in the STEWMAP project link above. 
@@ -31,7 +31,7 @@ More information about Baltimore's stewardship mapping project and old stewardsh
 
 ---
 # [National Aquarium Internship]
-#### [★ Species Monitoring Final Presentation ★](
+#### [Click here to access my final internship presentation](<a href="UCEEI_presentation.pdf"></a>) 
 
 <a href="pdfs/UCEEI_presentation.pdf" class="image fit"><img src="images/UCEEI_Interns.jpg" alt=""></a>
 ---
