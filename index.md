@@ -24,7 +24,7 @@
 
 ### [Baltimore Stewardship Mapping Project](project_STEWMAP/index.md)
 
-##### [The US Forest Service STEWMAP Website: nrs.fs.fed.us/stew-map/baltimore/](https://www.nrs.fs.fed.us/stew-map/baltimore/)
+##### [Click to be redirected to the US Forest Service STEWMAP Website: nrs.fs.fed.us/stew-map/baltimore/](https://www.nrs.fs.fed.us/stew-map/baltimore/)
 As a research assistant for the USDA Forest Service I am updating Baltimore’s comprehensive map of the hundreds of civic groups partcipiating in environmental stewardship in Baltimore as part of the 2019 Baltimore STEWMAP Project. Below is an image of my most recent updates, however the map is still in progress at this time. Some highlighted ideas for future analyses can be found in the STEWMAP project link above. 
 More information about Baltimore's stewardship mapping project and old stewardship maps and analyses can be found at the Forest Service's webpage, click the second link above to be redirected to the site!
 <br><br>
