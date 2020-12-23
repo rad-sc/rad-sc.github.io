@@ -1,5 +1,5 @@
 ### ***About Me:***
-<img src="images/AboutMe.jpdf?raw=true"/>
+<img src="images/AboutMe.pdf?raw=true"/>
 
 ---
 
