@@ -3,10 +3,10 @@
 
 ---
 
-# **My GIS Portfolio** 
+# 🌎 **My GIS Portfolio** 🌍
 #### - Navigate my porfolio by clicking title headings to be directed to a project page -
 ---
-# Advanced GIS Coursework :globe_with_meridians:
+# Advanced GIS Coursework
 
 #### [1. A Spatial Analysis of Florida Sea Level Rise ](/project1_486/index.md)
 <img src="https://rad-sc.github.io/project1_486/images/SeaLevelRise.gif?raw=true"/>
