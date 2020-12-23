@@ -3,7 +3,7 @@
 
 ---
 
-# **My GIS Portfolio :earth_americas: **
+# ** :earth_americas: My GIS Portfolio :earth_africa: **
 #### Navigate my porfolio by clicking title headings to be directed to a project page. 
 ---
 # Advanced GIS Coursework 
