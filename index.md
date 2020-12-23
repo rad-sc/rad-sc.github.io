@@ -3,8 +3,8 @@
 
 ---
 
-# My GIS Portfolio
-### Navigate my porfolio by clicking title headings to be directed to a project page. 
+# **My GIS Portfolio**
+#### Navigate my porfolio by clicking title headings to be directed to a project page. 
 ---
 # Advanced GIS Coursework 
 ---
@@ -17,6 +17,8 @@
 #### [★ Nutrient Hotspots Continued, Webmaps with Quantitative Data! ★](FinalProject_486/index.md)
 
 #### [★ Lab Outputs ★](/labs/index.md) 
+
+ 
 ---
 # USDA Forest Service Research
 ---
@@ -29,13 +31,11 @@ More information about Baltimore's stewardship mapping project and old stewardsh
 
 ---
 # [National Aquarium Internship]
-#### [★ Species Monitoring Final Presentation ★]
+#### [★ Species Monitoring Final Presentation ★](
 
 <a href="pdfs/UCEEI_presentation.pdf" class="image fit"><img src="images/UCEEI_Interns.jpg" alt=""></a>
-  
 ---
 
----
 # Personal Projects
 ---
 #### [Wildlife Photography](https://rad-sc.github.io/Webmap/qgis2web_photomap/index.html)
