@@ -28,8 +28,7 @@ More information about Baltimore's stewardship mapping project and old stewardsh
 <img src="project_STEWMAP/STEWMAP2.jpg?raw=true"/>
 
 ---
-# National Aquarium Internship
-<a href="pdfs/UCEEI_presentation.pdf" class="image fit">
+# [National Aquarium Internship]<a href="pdfs/UCEEI_presentation.pdf" class="image fit">
 ---
 
 ---
