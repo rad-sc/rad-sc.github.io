@@ -3,8 +3,7 @@
 
 ---
 
-# :earth_americas: **My GIS Portfolio** 
-:earth_africa: 
+# **My GIS Portfolio** 
 #### - Navigate my porfolio by clicking title headings to be directed to a project page -
 ---
 # Advanced GIS Coursework :globe_with_meridians:
