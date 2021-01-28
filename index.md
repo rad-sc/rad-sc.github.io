@@ -44,11 +44,13 @@
 ---
 # 🎓 Other Academic Works 🔬
 ---
-#### 🥒 Algal Biofuels Research 🥒
-##### As a student researcher for the UMBC Biology Department I am working on an individual research project in Dr. Stephen Miller's algal biofuels lab. My project focuses on using molecular biology techniques and recombiant DNA technology to genetically modify existing algal organisms and improve their capability to produce biofuels. This project is still in progress, up to date information and methods can be read on my project poster, which can be accessed by clicking the title link above.
+#### [🥒 Algal Biofuels Research 🥒](https://rad-sc.github.io/project_biofuel/Biofuels_SURF.pdf)
+##### As a student researcher for the UMBC Biology Department I worked on an individual research project in Dr. Stephen Miller's algal biofuels lab. My project focused on using molecular biology techniques and recombiant DNA technology to genetically modify existing algal organisms and improve their capability to produce biofuels. While I am no longer a student at UMBC or in Dr. Miller's lab, I am continuing my work in algal science through my current position at the Intstitute of Marine and Environmental Technology. A summary of the progress I made on my undergrad research can be read on my project poster, which can be accessed by clicking the title link above. I hope to add additional pages on my projects at IMET, so stay tuned!
 <br><br>
 <img src="images/algae culture.jpg?raw=true"/>
 
+---
+#### [Baltimore Harbow Watershed Microbial Assesment Project](⚠️in progress check back for more later!⚠️)
 ---
 <p style="font-size:12px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
 <!-- Remove above link if you don't want to attibute -->
