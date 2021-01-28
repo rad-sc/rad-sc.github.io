@@ -29,8 +29,8 @@
 
 
 ---
-# 🦈 National Aquarium Internship 🐟
-##### [Click here to access my final internship presentation](<a href="UCEEI_presentation.pdf"></a>) 
+# [🦈 National Aquarium Internship 🐟](https://rad-sc.github.io/NationalAquarium)
+##### During the summer of 2016 I was an intern for the National Aquarium through their Urban Wildlife Refuge Partnership with The USFW, NOAA, The EPA, and many more partners. Click the title above to access my final internship presentation. The photo below features myself and the other interns from left to right: Sarah, Sheldon, AJ, Logan. 
 
 <a href="pdfs/UCEEI_presentation.pdf" class="image fit"><img src="images/UCEEI_Interns.jpg" alt=""></a>
 ---
