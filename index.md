@@ -23,7 +23,7 @@
 
 #### [🗺️ Baltimore Stewardship Mapping Project 🗺️](project_STEWMAP/index.md)
 
-##### As a research assistant for the USDA Forest Service I am updating Baltimore’s comprehensive map of the hundreds of civic groups partcipiating in environmental stewardship in Baltimore as part of the 2019 Baltimore STEWMAP Project. The porject is currently ongoing, click the STEWMAP project link above to see some highlights. More information about Baltimore's stewardship mapping project and old stewardship maps and analyses can be found at the Forest Service's webpage, click the link below to be redirected to the site!
+##### As a research assistant for the USDA Forest Service I am updating Baltimore’s comprehensive map of the hundreds of civic groups partcipiating in environmental stewardship in Baltimore as part of the 2019 Baltimore STEWMAP Project. The project is currently ongoing, click the STEWMAP project link above to see some highlights. More information about Baltimore's stewardship mapping project and old stewardship maps and analyses can be found at the Forest Service's webpage, click the link below to be redirected to the site!
 
 ##### [Click to be redirected to the US Forest Service STEWMAP Webpage](https://www.nrs.fs.fed.us/stew-map/baltimore/)
 
