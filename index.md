@@ -4,7 +4,7 @@
 ---
 
 # 🌎 **My GIS Portfolio** 🌍
-#### Navigate my porfolio by clicking title headings to be directed to a project page
+#### Navigate my porfolio by clicking green title headings to be directed to a project page
 ---
 # 🌐 Advanced GIS Coursework 🌐
 
