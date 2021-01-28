@@ -1,3 +1,5 @@
+<img src="project_STEWMAP/STEWMAP2.jpg?raw=true"/>
+
 ## Proposals for future analyses of STEWMAP Turf data
 
 What is a turf? 
