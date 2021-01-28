@@ -8,11 +8,13 @@
 ---
 # 🌐 Advanced GIS Coursework 🌐
 
-#### [1️⃣ A Spatial Analysis of Florida Sea Level Rise ](/project1_486/index.md)
+##### Click the links below to be directed to my GIS coursework projects. 
 
-#### [2️⃣ Deep Diving Spatial Autocorrelation to Identify Nutrient Pollution Hotspots in the Chesapeake Bay Watershed ](/project2_486/index.md)
+#### [1️⃣ Project 1: A Spatial Analysis of Florida Sea Level Rise ](/project1_486/index.md)
 
-#### [3️⃣ Nutrient Hotspots Continued, Webmaps with Quantitative Data! ](FinalProject_486/index.md)
+#### [2️⃣ Project 2: Deep Diving Spatial Autocorrelation to Identify Nutrient Pollution Hotspots in the Chesapeake Bay Watershed ](/project2_486/index.md)
+
+#### [3️⃣ Project 3: Nutrient Hotspots Continued, Webmaps with Quantitative Data! ](FinalProject_486/index.md)
 
 #### [4️⃣ Lab Outputs ](/labs/index.md) 
 
