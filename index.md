@@ -1,5 +1,5 @@
 ### ***About Me:***
-<img src="images/AboutMe.jpg?raw=true"/>
+<img src="images/Aboutme.JPG?raw=true"/>
 
 ---
 
