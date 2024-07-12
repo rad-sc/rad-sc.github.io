@@ -38,7 +38,7 @@
 ---
 #### [📷 Wildlife Photography Map📷](https://rad-sc.github.io/Webmap/qgis2web_photomap/index.html)
 ##### I love to travel and take pictures of wildlife and landscapes. Below are a few of my favorite photos that I've taken. Click the title link above to see a detailed webmap of my photos! If you want to stay updated on my most recent pictures Instagram is the best place to look, follow me @AllThingsWild.Photos or click the link below to be directed to my page.
-##### [Instagram.com/AllThingsWild.Photos](https://www.instagram.com/allthingswild.photos/)
+##### [Instagram.com/Wildphotos.jpg](https://www.instagram.com/wildphotos.jpg/)
 <img src="https://rad-sc.github.io/images/20200129_004923-COLLAGE.jpg?raw=true"/>
 
 ---
